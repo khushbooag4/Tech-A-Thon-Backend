@@ -1,8 +1,8 @@
 const express = require("express");
-const fs =  require('fs');
-const Stream = require('./model/Stream');
-const Query = require('./model/Query');
-const connect = require('./config/db');
+const fs = require("fs");
+const Stream = require("./model/Stream");
+const Query = require("./model/Query");
+const connect = require("./config/db");
 const app = express();
 const port = 3000;
 
@@ -10,6 +10,11 @@ const port = 3000;
 connect();
 
 app.get("/", (req, res) => res.send("Hello World!"));
+
+app.get("/test", (req, res) => {
+  console.log("running....");
+  res.send("Test Api");
+});
 
 app.get("/video", (req, res) => {
   const range = req.headers.range;
@@ -34,9 +39,5 @@ app.get("/video", (req, res) => {
   const stream = fs.createReadStream(videoPath, { start, end });
   stream.pipe(res);
 });
-
-app.get('/quote', (req,res) => {
-    
-})
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
