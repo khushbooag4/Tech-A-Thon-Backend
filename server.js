@@ -45,4 +45,6 @@ app.get("/video", (req, res) => {
   stream.pipe(res);
 });
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen(process.env.PORT || port, () =>
+  console.log(`App listening on port ${port}!`)
+);
