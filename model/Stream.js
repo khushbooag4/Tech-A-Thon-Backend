@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 //User Schema
 const StreamSchema = new mongoose.Schema({
+  streamId: {
+    type: Number,
+    required: true
+  },
   streamName: {
     type: String,
   },
@@ -15,7 +19,10 @@ const StreamSchema = new mongoose.Schema({
   url: {
     type: String,
   },
-  video: {
+  thumbnail: {
+    type: String,
+  },
+  title: {
     type: String,
   },
 });
