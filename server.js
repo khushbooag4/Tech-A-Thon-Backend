@@ -29,28 +29,20 @@ app.get("/streams", async (req, res) => {
 app.get("/streams/:id", async (req, res) => {
   const { id } = req.params;
   const user = await Stream.find({
-    streamId: id
+    streamId: id,
   }).then((data) => {
     console.log(data);
     res.status(200).send(data);
   });
 });
 
-
-
 app.post("/streams", async (req, res) => {
-  const stream = new Stream({
-    streamName: "Web Development with JavaScript",
-    isLive: true,
-    thumbnail:
-      "https://moralis.io/wp-content/uploads/2021/07/Moralis-Blogpost-JavaScript-Explained-07272021-V12.png",
-    source: "vimeo",
-  });
+  const stream = new Stream(req.body);
 
   await stream
     .save()
-    .then(() => {
-      res.status(200);
+    .then((data) => {
+      res.status(200).send(data);
     })
     .catch((err) => {
       console.log(err);
