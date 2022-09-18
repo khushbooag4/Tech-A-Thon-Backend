@@ -3,10 +3,18 @@ const mongoose = require("mongoose");
 const StreamSchema = new mongoose.Schema({
   streamId: {
     type: Number,
-    required: true
+    required: true,
   },
   streamName: {
     type: String,
+  },
+  isVimeo: {
+    type: Boolean,
+    default: false,
+  },
+  isYoutube: {
+    type: Boolean,
+    default: false,
   },
   isLive: {
     type: Boolean,
