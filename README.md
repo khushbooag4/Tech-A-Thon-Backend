@@ -23,26 +23,21 @@ Nodejs Download link -> https://nodejs.org/en/download/
 You need to clone (download) it to your local machine.
 
 ```bash
-  git clone https://github.com/kalpitjain/Face-Web.git
+   git clone https://github.com/kalpitjain/Face-Web.git](https://github.com/khushbooag4/Tech-A-Thon.git
 ```
-    
-2. Change Directory to faceweb
+
+2. Install NPM packages
 
 ```bash
-  cd Face-Web-main
+   npm install
 ```
-3. Install NPM packages
+3. Run Server using nodemon
 
 ```bash
-  npm install
+   npm start
 ```
-4. Run Face Web using nodemon
+4. Run Server on Browser
 
 ```bash
-  node app.js
-```
-5. Run Face Web on Browser
-
-```bash
-  localhost:3000
+   localhost:3000
 ```
